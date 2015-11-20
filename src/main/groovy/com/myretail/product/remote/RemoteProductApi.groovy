@@ -35,7 +35,7 @@ class RemoteProductApi {
   }
 
   Promise<String> productTitle(String productId) {
-    httpClient.get("https://www.tgtappdata.com/v1/products/pdp/TCIN/${productId}".toURI()).map({ ReceivedResponse rr -> parse(rr.body.text) })
+    httpClient.get("https://www.tgtappdata.com/v1/products/pdp/TCIN/${productId}".toURI()).map{ ReceivedResponse rr -> parse(rr.body.text) }
   }
 
 }

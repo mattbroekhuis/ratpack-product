@@ -21,11 +21,11 @@ class ProductService {
 
 
   Promise<Product> one(String productId) {
-    cassandra.get(Product, productId).right(remoteProductApi.productTitle(productId)).map({
+    cassandra.get(Product, productId).right(remoteProductApi.productTitle(productId)).map {
       Product p = it.left ?: new Product(productId: productId)
       p.title = it.right
       p
-    })
+    }
   }
 
   Promise<Void> put(String productId, Product body) {
