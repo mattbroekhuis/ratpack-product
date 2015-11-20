@@ -1,0 +1,32 @@
+group 'com.myretail'
+version '1.0-SNAPSHOT'
+
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath "io.ratpack:ratpack-gradle:1.1.1"
+  }
+}
+
+
+apply plugin: "io.ratpack.ratpack-groovy"
+apply plugin: "idea"
+
+sourceCompatibility = 1.8
+
+repositories {
+  jcenter()
+}
+
+dependencies {
+  runtime "org.slf4j:slf4j-simple:1.7.12"
+  compile 'org.codehaus.groovy:groovy-all:2.4.4'
+  compile 'com.datastax.cassandra:cassandra-driver-core:3.0.0-alpha5'
+  compile 'com.datastax.cassandra:cassandra-driver-mapping:3.0.0-alpha5'
+  compile 'com.datastax.cassandra:cassandra-driver-extras:3.0.0-alpha5'
+  compile 'org.codehaus.gpars:gpars:1.2.1'
+  testCompile group: 'org.spockframework', name: 'spock-core', version: '1.0-groovy-2.4'
+}
+
